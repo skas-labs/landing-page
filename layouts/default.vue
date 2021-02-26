@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper h-100" style="margin-top: -70px;">
+  <div class="wrapper h-100 a-cbm" style="margin-top: -70px;">
     <Navbar />
     <Nuxt />
   </div>
@@ -10,9 +10,21 @@ export default {};
 </script>
 
 <style>
-@media (max-width: 576px) {
+@media screen and (max-width: 991px) {
   html {
-    font-size: 12px;
+    font-size: 13px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 12px !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 11px !important;
   }
 }
 

@@ -1,21 +1,23 @@
 <template>
-  <div class="jacket">
-    <div class="width-limiter">
-      <div class="row mx-5 h-100 align-items-center">
-        <div class="col-lg-7">
+  <div class="jacket px-md-50 px-25">
+    <div class="width-limiter h-100">
+      <div class="row no-gutters h-100 align-items-center position-relative">
+        <div class="flex-1 left-section t-align-lg-l t-align-c">
           <div class="">
             <div class="">
               <img src="../assets/logo_text.svg" alt="" />
             </div>
             <div>
-              <div class="font-1">
+              <div class="font-level-1">
                 get notified when we launch
               </div>
-              <div class="my-3 font-2">
+              <div class="my-3 font-level-2">
                 don't worry we will not not spam you
               </div>
             </div>
-            <div class="row mt-5">
+            <div
+              class="row mt-5 no-gutters justify-content-lg-start justify-content-center"
+            >
               <div class="col-sm-10">
                 <BevelForm />
               </div>
@@ -23,15 +25,18 @@
           </div>
         </div>
 
-        <div class="col-lg-5 d-flex justify-content-center">
-          <div class="mt-5 my-md-0 d-none d-sm-block ">
+        <div class="position-absolute phone-image">
+          <div class="mt-5 my-md-0 d-none d-lg-block">
             <img
               src="../assets/mobileFront.png"
               alt=""
-              class="phone-image mx-auto text-center h-100"
+              class="mx-auto text-center h-100"
             />
           </div>
         </div>
+      </div>
+      <div class="mt-50 mx-auto d-block d-lg-none t-align-c">
+        <img src="../assets/mobileFront.png" alt="" class="mx-auto" />
       </div>
     </div>
   </div>
@@ -42,22 +47,38 @@ export default {};
 </script>
 
 <style>
-.font-1 {
+.font-level-1 {
   margin-top: 5rem;
   font-size: 3rem !important;
   font-weight: 900;
   line-height: 90%;
 }
+
 .phone-image {
-  background-size: contain;
+  right: 0;
+  bottom: 0;
 }
 
 .jacket {
-  margin-top: 1rem;
-  height: 70vh;
+  /* margin-top: 1rem; */
+  height: calc(100vh - 120px);
 }
 
-.font-2 {
+.font-level-2 {
   font-size: 1.5rem !important;
+}
+
+.left-section {
+  padding-right: 500px;
+}
+
+@media screen and (max-width: 991px) {
+  .left-section {
+    padding-right: 0;
+  }
+
+  .jacket {
+    height: unset;
+  }
 }
 </style>
