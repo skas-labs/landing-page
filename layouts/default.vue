@@ -1,27 +1,27 @@
 <template>
-  <div class="wrapper h-100">
-    <Navbar/>
+  <div class="wrapper h-100" style="margin-top: -70px;">
+    <Navbar />
     <Nuxt />
   </div>
 </template>
 
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
 <style>
 @media (max-width: 576px) {
-  html{font-size: 12px;}
+  html {
+    font-size: 12px;
+  }
 }
 
-*{
-  font-family: 'muli',sans-serif;
+* {
+  font-family: "muli", sans-serif;
   margin: 0;
 }
 html {
-  font-family: 'muli', sans-serif;
+  font-family: "muli", sans-serif;
   font-weight: 400;
   /* word-spacing: 1px; */
   -ms-text-size-adjust: 100%;
@@ -29,14 +29,14 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background: #0F0F20;
+  background: #0f0f20;
   min-height: 100vh;
 }
 
 .wrapper {
-  background: #0F0F20;
+  background: #0f0f20;
   color: white;
-  margin: 0 !important;
+  /* margin: 0 !important; */
   font-size: 1.5rem;
   position: relative;
   min-height: 95vh;
