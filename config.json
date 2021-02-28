@@ -1,0 +1,12 @@
+{
+  "development": {
+    "axios": {
+      "baseUrl": "http://localhost:3131"
+    }
+  },
+  "production": {
+    "axios": {
+      "baseUrl": "https://api.stage.codeblitz.app"
+    }
+  }
+}

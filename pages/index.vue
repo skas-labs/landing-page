@@ -19,7 +19,9 @@
               class="row mt-5 no-gutters justify-content-lg-start justify-content-center"
             >
               <div class="col-sm-10">
-                <BevelForm />
+                <client-only>
+                 <BevelForm />
+                </client-only>
               </div>
             </div>
           </div>

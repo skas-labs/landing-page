@@ -1,11 +1,48 @@
 <template>
-  <form class="bevel d-flex py-1">
-    <div class="d-inline-block flex-grow-1 d-flex">
-      <input type="email" placeholder="enter your email address" class="emailForm  my-auto pl-3 py-2">
-    </div>
-    <button class="btn btn-orange px-md-4 py-md-2 text-white flex-shrink-1">notify me</button>
-  </form>  
+  <div class="registeration-form">
+      <div :class="{visible: hasSubmitted}">Thanks for your interest! You'll hear from us soon. </div>
+      <div :class="{visible: !hasSubmitted}" class="bevel py-1">
+        <div class="d-inline-block flex-grow-1 d-flex">
+          <input type="email" placeholder="enter your email address" class="emailForm  my-auto pl-3 py-2" v-model="email">
+        </div>
+        <button class="btn btn-orange px-md-4 py-md-2 text-white flex-shrink-1" @click="submitForm">notify me</button>
+      </div> 
+  </div> 
 </template>
+
+<script>
+export default {
+  name: 'EmailRegisterationForm',
+  data () {
+    return {
+      email: '',
+      hasSubmitted: Boolean(window.localStorage.getItem('hasRegistered')) ?? false
+    }
+  },
+  methods: {
+    async submitForm () {
+      const {email} = this
+      try {
+        await this.$axios.post('/registration', {email})
+        this.hasSubmitted = true
+        window.localStorage.setItem('hasRegistered', true)
+      } catch (err) {
+        if (!err?.response?.data) {
+          throw err
+        }
+
+        const {response: {data}} = err
+
+        switch(data.statusCode) {
+          case 500: return alert(data.message)
+          case 400: return alert('Invalid Input')
+          default: return alert('We cannot process that request now. Try again later.')
+        }
+      }
+    }
+  }
+}
+</script>
 
 <style scoped>
 .bevel{
@@ -15,13 +52,9 @@
   border: none;
   font-family: muli;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1registeration-form;
+  display: flex;
 }
-input::placeholder{
-  font-family: muli;
-  font-weight: 800;
-}
-
 .emailForm{
     background: none;
     border: none;
@@ -36,4 +69,15 @@ input::placeholder{
   font-weight: 600;
   font-size: 1em;
 }
+
+.registeration-form>div {
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+
+.registeration-form>div.visible {
+  opacity: 1;
+}
+
 </style>

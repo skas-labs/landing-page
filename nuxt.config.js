@@ -1,3 +1,4 @@
+const config = require('./config.json')[process.env.NODE_ENV ?? 'development']
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
@@ -70,8 +71,11 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    '@nuxtjs/axios'
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
+  axios: config.axios
 };
