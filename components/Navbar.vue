@@ -15,14 +15,14 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item mx-2">
-                <a class="nav-link text-white" href="#">instagram</a>
+                <a class="nav-link text-white" href="https://www.instagram.com/codeblitz_cb/">instagram</a>
               </li>
-              <li class="nav-item mx-2">
+              <!-- <li class="nav-item mx-2">
                 <a class="nav-link text-white" href="#">facebook</a>
               </li>
               <li class="nav-item mx-2">
                 <a class="nav-link text-white" href="#">twitter</a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>

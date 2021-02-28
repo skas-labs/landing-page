@@ -35,7 +35,15 @@
           </div>
         </div>
       </div>
-      <div class="mt-50 mx-auto d-block d-lg-none t-align-c">
+      <div class="mt-10 mx-auto d-block d-lg-none t-align-c">
+        <div class="row no-gutters justify-content-center">
+          <a href="https://www.instagram.com/codeblitz_cb/" class="text-white">
+          <div class="p-3 mx-5 my-4 d-flex">
+            <font-awesome-icon :icon="['fab', 'instagram']" style="font-size: 30px" class="mx-3"/>
+            <div class="my-auto"> instagram </div>
+          </div>
+          </a>
+        </div>
         <img src="../assets/mobileFront.png" alt="" class="mx-auto" />
       </div>
     </div>
